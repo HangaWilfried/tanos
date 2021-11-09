@@ -4,6 +4,10 @@ export interface User{
     dateOfBirth: string
 }
 
+export interface fixDate{
+    day: string,
+}
+
 export interface Info{
     fullName : string,
     day: string,

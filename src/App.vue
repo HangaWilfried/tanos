@@ -28,8 +28,8 @@
   <footer>
     <div v-for="(birthday, index) in birthdays" :key="index">
       <p>{{birthday.fullName}}</p>
-      <p>next birthday {{nextBirthday}}</p>
-      <p>less than {{remaining}} days</p>
+      <!-- <p>next birthday {{nextBirthday}}</p>
+      <p>less than {{remaining}} days</p> -->
       <p @click="deleteBirthday">x</p>
     </div>
   </footer>
@@ -49,7 +49,7 @@
         dateOfBirth: '27-05-2000'
       })
       let hasBeenAdded = ref<boolean>(false)
-      const birthdays = ref<Info[]>([])
+      const birthdays = ref<Info[]>([]);
 
       const newBirthday = ():Info => {
         const {month, day, date} = manageDate(user.dateOfBirth)
@@ -60,14 +60,14 @@
           dayOfMonth: date
         }
       }
-      const addNewBirthday = (fn: ):void => {
-        const obj= newBirthday();
-        hasBeenAdded.value = birthdays.value.some((item) => item.fullName === obj.fullName)
-        if(hasBeenAdded){
+      const addNewBirthday = ():void => {
+        const {fullName, day, month, dayOfMonth} = newBirthday();
+        hasBeenAdded.value = birthdays.value.some((item) => item.fullName === fullName)
+        if(hasBeenAdded.value){
           alert('this already existed please make sure you are try registered the good birthday')
         }
         else{
-          birthdays.value.push(obj)
+          birthdays.value.push({fullName, day, month, dayOfMonth})
         }
         console.log(birthdays.value)
       }
