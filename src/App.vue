@@ -28,8 +28,8 @@
   <footer>
     <div v-for="(birthday, index) in birthdays" :key="index">
       <p>{{birthday.fullName}}</p>
-      <!-- <p>next birthday {{nextBirthday}}</p>
-      <p>less than {{remaining}} days</p> -->
+      <p>next birthday {{birthday.day}} {{birthday.dayOfMonth}} {{birthday.month}} {{birthday.year}}</p>
+      <p>less than {{birthday.remaining}} days</p>
       <p @click="deleteBirthday">x</p>
     </div>
   </footer>
@@ -51,25 +51,35 @@
       let hasBeenAdded = ref<boolean>(false)
       const birthdays = ref<Info[]>([]);
 
+      const getRemaining = ():number => {
+        const CONVERT_TO_DAYS = 24 * 3600000
+        const {month, date} = manageDate(user.dateOfBirth)
+        const time = new Date()
+        const now =  new Date(`${time.getFullYear()},${time.getMonth()},${time.getDate()}`)
+        const nextBirth = new Date(`${time.getFullYear()+1},${month},${date}`)
+        return Math.floor((nextBirth - now) / CONVERT_TO_DAYS)
+      }
+
       const newBirthday = ():Info => {
         const {month, day, date} = manageDate(user.dateOfBirth)
         return {
           fullName : `${user.lastName} ${user.firstName}`,
           day: daysOfWeek.value[day],
           month: months.value[month],
-          dayOfMonth: date
+          dayOfMonth: date,
+          year: new Date().getFullYear()+1,
+          remaining: getRemaining()
         }
       }
       const addNewBirthday = ():void => {
-        const {fullName, day, month, dayOfMonth} = newBirthday();
+        const {fullName, day, month, dayOfMonth, year, remaining} = newBirthday();
         hasBeenAdded.value = birthdays.value.some((item) => item.fullName === fullName)
         if(hasBeenAdded.value){
           alert('this already existed please make sure you are try registered the good birthday')
         }
         else{
-          birthdays.value.push({fullName, day, month, dayOfMonth})
+          birthdays.value.push({fullName, day, month, dayOfMonth, year, remaining})
         }
-        console.log(birthdays.value)
       }
       const deleteBirthday = (index: number) => birthdays.value.splice(index, 1)
       const countBirthdays = computed(() => birthdays.value.length)
@@ -86,7 +96,7 @@
       }
       return{
         hasBeenAdded, user, countBirthdays, nextYear, birthdays, months, daysOfWeek,
-        addNewBirthday, deleteBirthday
+        addNewBirthday, deleteBirthday, getRemaining
       }
     }
   })
