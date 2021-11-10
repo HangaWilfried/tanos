@@ -17,23 +17,20 @@
 </template>
 
 <script lang="ts">
-import {reactive, ref, defineComponent} from 'vue'
+import {reactive, defineComponent} from 'vue'
 import {Info, User} from '../interface/User'
 
 export default defineComponent({
   name: "Form",
   emits: ['submit'],
   setup: function (_, {emit}) {
-    const daysOfWeek = ref<string[]>(['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'])
-    const months = ref<string[]>(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec'])
+    const daysOfWeek:string[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+    const months:string[] = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec']
     const user = reactive<User>({
-      lastName: 'Mendy',
-      firstName: 'Edouard',
-      dateOfBirth: '27-05-2000'
+      lastName: '',
+      firstName: '',
+      dateOfBirth: ''
     })
-    // let hasBeenAdded = ref<boolean>(false)
-    // const birthdays = ref<Info[]>([]);
-
     const getRemaining = (): number => {
       const CONVERT_TO_DAYS = 24 * 3600000
       const {month, date} = manageDate(user.dateOfBirth)
@@ -46,8 +43,8 @@ export default defineComponent({
       const {month, day, date} = manageDate(user.dateOfBirth)
       return {
         fullName: `${user.lastName} ${user.firstName}`,
-        day: daysOfWeek.value[day],
-        month: months.value[month],
+        day: daysOfWeek[day],
+        month: months[month],
         dayOfMonth: date,
         year: new Date().getFullYear() + 1,
         remaining: getRemaining()
@@ -67,11 +64,9 @@ export default defineComponent({
       }
     }
     return {
-      months, daysOfWeek, user,
-      manageDate, getRemaining, submit, newBirthday
+      user,
+      submit
     }
   }
 })
 </script>
-
-
