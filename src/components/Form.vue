@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import {reactive, ref, defineComponent} from 'vue'
+import {reactive, defineComponent} from 'vue'
 import {Info, User} from '../interface/User'
 
 export default defineComponent({
