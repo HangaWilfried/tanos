@@ -31,9 +31,6 @@ export default defineComponent({
       firstName: 'Edouard',
       dateOfBirth: '27-05-2000'
     })
-    // let hasBeenAdded = ref<boolean>(false)
-    // const birthdays = ref<Info[]>([]);
-
     const getRemaining = (): number => {
       const CONVERT_TO_DAYS = 24 * 3600000
       const {month, date} = manageDate(user.dateOfBirth)
@@ -73,5 +70,3 @@ export default defineComponent({
   }
 })
 </script>
-
-
