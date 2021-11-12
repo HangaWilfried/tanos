@@ -25,15 +25,15 @@ export default defineComponent({
   name: "Form",
   emits: ['submit'],
   setup: function (_, {emit}) {
-    const lastName = ref<string | undefined>('')
+    const lastName = ref<string>('')
     const firstName = ref<string>('')
     const user = reactive<User>({
       fullName: '',
       dateOfBirth: ''
     })
     const submit = () => {
-        user.fullName = `${lastName.value} ${firstName.value}`
-        emit('submit', user)
+      user.fullName = `${lastName.value} ${firstName.value}`
+      emit('submit', user)
     }
     return {
       user, lastName, firstName,

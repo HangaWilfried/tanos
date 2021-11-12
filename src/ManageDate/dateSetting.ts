@@ -1,15 +1,11 @@
-import {Info} from '../interface/User'
+import {Birth, Info} from '../interface/User'
+
+const daysOfWeek:string[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+const months:string[] = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec']
 
 export const aboutBirthday = (date:string):Info => {
-    const daysOfWeek:string[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
-    const months:string[] = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec']
     const guessTime = new Date(date)
-
-    const guessMonth = guessTime.getMonth()+1
-    const guessDate = guessTime.getDate()
-
-    const refereeTime = new Date()
-    const birthdayDate = new Date(`${refereeTime.getFullYear()+1} ${guessMonth} ${guessDate}`)
+    const birthdayDate = new Date(`${new Date().getFullYear()+1} ${guessTime.getMonth()+1} ${guessTime.getDate()}`)
     return {
         year: birthdayDate.getFullYear(),
         month: months[birthdayDate.getMonth()],
@@ -17,35 +13,30 @@ export const aboutBirthday = (date:string):Info => {
         day: daysOfWeek[birthdayDate.getDay()]
     }
 }
-export const format = (guessDate:string) => {
-    const daysOfWeek:string[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
-    const months:string[] = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec']
+export const format = (guessDate:string):Info => {
     const guessTime = new Date(guessDate)
-    const date = guessTime.getDate()
-    const month = months[guessTime.getMonth()]
-    const year = guessTime.getFullYear()
-    const day = daysOfWeek[guessTime.getDay().valueOf()]
-    return {day, date, month, year}
+    return {
+        day: daysOfWeek[guessTime.getDay().valueOf()],
+        date: guessTime.getDate(),
+        month: months[guessTime.getMonth()],
+        year: guessTime.getFullYear()
+    }
 }
-export const getRemaining = (obj:Info) => {
+export const getRemaining = (birthdayInfo:Info):number => {
     const DAYS_CONVERSION = 24 * 3600000
-    const {year, month, date} = obj
+    const {year, month, date} = birthdayInfo
     const time = new Date()
-    const currentMonth = time.getMonth()+1
-    const currentYear = time.getFullYear()
-    const currentDate = time.getDate()
-    const now = new Date(`${currentYear},${currentMonth},${currentDate}`)
+    const now = new Date(`${time.getFullYear()},${time.getMonth()+1},${time.getDate()}`)
     const birthday = new Date(`${year},${month},${date}`)
 
-    return (birthday.valueOf() - now.valueOf())/DAYS_CONVERSION
+    return (birthday.valueOf() - now.valueOf()) / DAYS_CONVERSION
 }
 
-const formatNumber = (guessNumber:number) => {
+const formatNumber = (guessNumber:number):number|string => {
     return guessNumber < 10 ? `0${guessNumber}`: guessNumber
 }
 
-export const getTime = () => {
-    const months:string[] = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec']
+export const getTime = ():Birth => {
     const time = new Date()
     return{
         date: formatNumber(time.getDate()),
@@ -54,7 +45,7 @@ export const getTime = () => {
     }
 }
 
-export const getHours = () => {
+export const getHours = ():Object => {
     const time = new Date()
     return {
         hour: formatNumber(time.getHours()),
