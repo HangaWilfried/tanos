@@ -21,8 +21,28 @@
       <template #default>
         <div>
           <p>{{birthday.fullName}}</p>
-          <p>next birthday {{birthday.day}} {{birthday.dayOfMonth}} {{birthday.month}} {{birthday.year}}</p>
-          <p>less than {{birthday.remaining}} days</p>
+          <p>
+            <span>
+              birthday: {{
+                `
+                  ${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date}
+                  ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}
+                `
+              }}
+            </span>
+            <span>
+              birth: {{
+                `
+                  ${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date}
+                  ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}
+                `
+              }}
+            </span>
+          </p>
+          <p>less than {{getRemaining(aboutBirthday(birthday.dateOfBirth))}} days</p>
+          <p>added
+            <span>{{`${getTime().date}${getTime().month}${getTime().year}`}}</span>
+            <span>{{`${getHours().hour}:${getHours().minute}`}}</span></p>
           <p @click="deleteBirthday">x</p>
         </div>
       </template>
@@ -34,32 +54,43 @@
   import Header from './components/Header.vue'
   import Form from './components/Form.vue'
   import Birth from './components/Birth.vue'
-
-  import {Info} from './interface/User'
-  import {defineComponent, reactive, ref, computed} from 'vue'
+  import {format, aboutBirthday, getRemaining, getTime, getHours} from './ManageDate/dateSetting'
+  import {User} from './interface/User'
+  import {defineComponent, ref, computed, onBeforeMount} from 'vue'
   export default defineComponent({
     name: 'App',
     components: {Header, Form, Birth},
-    setup(){
+    setup() {
       let hasBeenAdded = ref<boolean>(false)
-      const birthdays = ref<Info[]>([]);
-      const addNewBirthday = ({fullName, day, month, dayOfMonth, year, remaining}:Info):void => {
-        console.log(birthdays.value)
+      const birthdays = ref<User[]>([])
+      const addNewBirthday = ({fullName, dateOfBirth}: User): void => {
         hasBeenAdded.value = birthdays.value.some((item) => item.fullName === fullName)
-        if(hasBeenAdded.value){
+        console.log(typeof fullName)
+        if( fullName === '' || dateOfBirth === '') {
+          alert('fill in the empty fields')
+        }
+        else if(hasBeenAdded.value) {
           alert('this already existed please make sure you are try registered the good birthday')
         }
-        else{
-          birthdays.value.push({fullName, day, month, dayOfMonth, year, remaining})
+        else {
+          birthdays.value.push({fullName, dateOfBirth})
+          localStorage.setItem('value', JSON.stringify(birthdays.value))
         }
       }
-      const deleteBirthday = (index: number) => birthdays.value.splice(index, 1)
+      const deleteBirthday = (index: number) => {
+        birthdays.value.splice(index, 1)
+        localStorage.setItem('value', JSON.stringify(birthdays.value));
+      }
       const countBirthdays = computed(() => birthdays.value.length)
-      const nextYear = computed(() => new Date().getFullYear()+1)
-
-      return{
-        hasBeenAdded,  birthdays, countBirthdays, nextYear,
-        addNewBirthday, deleteBirthday
+      const nextYear = computed(() => new Date().getFullYear() + 1)
+      onBeforeMount(() => {
+        if (localStorage.getItem('value')) {
+          birthdays.value = JSON.parse(localStorage.getItem('value') || '[]')
+        }
+      })
+      return {
+        birthdays, countBirthdays, nextYear,
+        addNewBirthday, deleteBirthday, format, aboutBirthday, getRemaining, getHours, getTime
       }
     }
   })
