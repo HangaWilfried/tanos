@@ -1,6 +1,6 @@
 import {Info} from '../interface/User'
 
-export const aboutBirthday = (date:string):Info =>{
+export const aboutBirthday = (date:string):Info => {
     const daysOfWeek:string[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
     const months:string[] = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec']
     const guessTime = new Date(date)
@@ -27,7 +27,7 @@ export const format = (guessDate:string) => {
     const day = daysOfWeek[guessTime.getDay().valueOf()]
     return {day, date, month, year}
 }
-export const getRemaining = (obj:Info) =>{
+export const getRemaining = (obj:Info) => {
     const DAYS_CONVERSION = 24 * 3600000
     const {year, month, date} = obj
     const time = new Date()
@@ -40,11 +40,11 @@ export const getRemaining = (obj:Info) =>{
     return (birthday.valueOf() - now.valueOf())/DAYS_CONVERSION
 }
 
-function formatNumber(guessNumber:number){
+const formatNumber = (guessNumber:number) => {
     return guessNumber < 10 ? `0${guessNumber}`: guessNumber
 }
 
-export const getTime = ()=>{
+export const getTime = () => {
     const months:string[] = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec']
     const time = new Date()
     return{
@@ -54,7 +54,7 @@ export const getTime = ()=>{
     }
 }
 
-export function getHours(){
+export const getHours = () => {
     const time = new Date()
     return {
         hour: formatNumber(time.getHours()),
