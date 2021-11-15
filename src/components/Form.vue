@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import {reactive, ref, defineComponent} from 'vue'
-import {User} from '../interface/User'
+import {User} from '@/interface/User'
 
 
 export default defineComponent({

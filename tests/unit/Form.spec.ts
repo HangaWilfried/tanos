@@ -1,22 +1,16 @@
 import Form from '../../src/components/Form.vue'
 import {mount} from '@vue/test-utils'
-import {User} from '@/interface/User'
-import {nextTick} from 'vue'
+
 
 
 describe('Form.vue', () => {
     it('will call with all values', async () => {
         const wrapper = mount(Form)
-        wrapper.vm.submit()
-        const user:User = {
-            fullName: 'lagoue junior',
-            dateOfBirth: '2000 05 27'
-        }
-        await nextTick()
-        expect(wrapper.emitted().submit[0]).toEqual([
-            {
-              fullName: user.fullName,
-              dateOfBirth: user.dateOfBirth
-            }])
+        const input = wrapper.findAll('input')
+        await input[0].setValue('antomny')
+        await input[1].setValue('leornard')
+        await input[2].setValue('2000-05-27')
+        await wrapper.find('button').trigger('click')
+        expect(wrapper.emitted().submit[0]).toEqual([{fullName: 'antomny leornard', dateOfBirth: '2000-05-27'}])
     })
 })
