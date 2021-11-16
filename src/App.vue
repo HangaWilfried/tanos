@@ -1,6 +1,6 @@
 <template>
   <Header>
-    <template>
+    <template #default>
       <header>
         <nav>
           <h1>{{nextYear}} BIRTHDAYS APP</h1>
@@ -51,37 +51,35 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, computed, onBeforeMount} from 'vue'
+import { defineComponent, ref, computed, onBeforeMount } from 'vue'
 
 import Header from './components/Header.vue'
 import Form from './components/Form.vue'
 import Birth from './components/Birth.vue'
 
-import {User} from './interface/User'
+import { User } from './interface/User'
 
-import {format, aboutBirthday, getRemaining, getTime, getHours} from './ManageDate/dateSetting'
-import {setSave} from './LocalStorage/storage'
+import { format, aboutBirthday, getRemaining, getTime, getHours } from './ManageDate/dateSetting'
+import { setSave } from './LocalStorage/storage'
 
 export default defineComponent({
 
   name: 'App',
 
-  components: {Header, Form, Birth},
+  components: { Header, Form, Birth },
 
-  setup() {
-    let hasBeenAdded = ref<boolean>(false)
+  setup () {
+    const hasBeenAdded = ref<boolean>(false)
     const birthdays = ref<User[]>([])
 
-    const addNewBirthday = ({fullName, dateOfBirth}: User): void => {
+    const addNewBirthday = ({ fullName, dateOfBirth }: User): void => {
       hasBeenAdded.value = birthdays.value.some((item) => item.fullName === fullName)
-      if( fullName === '' || dateOfBirth === '') {
+      if (fullName === '' || dateOfBirth === '') {
         alert('fill in the empty fields')
-      }
-      else if(hasBeenAdded.value) {
+      } else if (hasBeenAdded.value) {
         alert('this already existed please make sure you are try registered the good birthday')
-      }
-      else {
-        birthdays.value.push({fullName, dateOfBirth})
+      } else {
+        birthdays.value.push({ fullName, dateOfBirth })
         setSave('value', birthdays.value)
       }
     }
@@ -98,14 +96,23 @@ export default defineComponent({
     onBeforeMount(() => {
       if (localStorage.getItem('value')) {
         birthdays.value = JSON.parse(localStorage.getItem('value') || '[]')
+      } else {
+        localStorage.setItem('value', '[]')
       }
     })
 
     return {
-      birthdays, countBirthdays, nextYear,
-      addNewBirthday, deleteBirthday, format, aboutBirthday, getRemaining, getHours, getTime
+      birthdays,
+      countBirthdays,
+      nextYear,
+      addNewBirthday,
+      deleteBirthday,
+      format,
+      aboutBirthday,
+      getRemaining,
+      getHours,
+      getTime
     }
-
   }
 })
 </script>
