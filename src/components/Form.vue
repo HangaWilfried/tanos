@@ -17,14 +17,13 @@
 </template>
 
 <script lang="ts">
-import {reactive, ref, defineComponent} from 'vue'
-import {User} from '@/interface/User'
-
+import { reactive, ref, defineComponent } from 'vue'
+import { User } from '@/interface/User'
 
 export default defineComponent({
-  name: "Form",
+  name: 'Form',
   emits: ['submit'],
-  setup: function (_, {emit}) {
+  setup: function (_, { emit }) {
     const lastName = ref<string>('')
     const firstName = ref<string>('')
     const user = reactive<User>({
@@ -36,7 +35,9 @@ export default defineComponent({
       emit('submit', user)
     }
     return {
-      user, lastName, firstName,
+      user,
+      lastName,
+      firstName,
       submit
     }
   }
