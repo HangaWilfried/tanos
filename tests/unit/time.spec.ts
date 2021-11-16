@@ -1,4 +1,4 @@
-import { getHours, getTime, getRemaining, format, aboutBirthday } from '@/ManageDate/dateSetting'
+import { getHours, getTime, getRemaining, format, aboutBirthday } from '../../src/ManageDate/dateSetting'
 
 const daysOfWeek:string[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
 const months:string[] = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec']
