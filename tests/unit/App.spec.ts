@@ -27,6 +27,7 @@ describe('App', () => {
         expect(wrapper.findAllComponents(Birth).length).toBe(0)
         expect(wrapper.vm.countBirthdays).toBe(0)
         expect(wrapper.vm.birthdays.length).toBe(0)
+        expect(localStorage.getItem('value')).toMatch('[]')
     })
     it('check if we can add birthday in double', async () => {
         const wrapper = mount(App)
@@ -42,5 +43,6 @@ describe('App', () => {
         })
         await nextTick()
         expect(wrapper.findAllComponents(Birth).length).toBe(1)
+        expect(localStorage.getItem('value')).toMatch("[{\"fullName\":\"Hanga Lagoue\",\"dateOfBirth\":\"2000 05 27\"}]")
     })
 })
