@@ -59,8 +59,8 @@ import Birth from './components/Birth.vue'
 
 import { User } from './interface/User'
 
-import { format, aboutBirthday, getRemaining, getTime, getHours } from './ManageDate/dateSetting'
-import { setSave } from './LocalStorage/storage'
+import { format, aboutBirthday, getRemaining, getTime, getHours } from './utils/date'
+import { setSave } from './utils/storage'
 
 export default defineComponent({
 
