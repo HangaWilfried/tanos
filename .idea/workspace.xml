@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a851e385-0b59-4d74-8a16-9da9ed3e0d1b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/unit/App.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/App.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,30 +48,31 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Jest.details about the birthday date">
-    <configuration name="check the correct current Time" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.App.check if we can add birthday in double">
+    <configuration name="App" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/unit/time.spec.ts" />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/tests/unit/App.spec.ts" />
       <test-names>
-        <test-name value="check the correct current Time" />
+        <test-name value="App" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="check the correct current date" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="App.check if we can add birthday in double" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/unit/time.spec.ts" />
+      <test-file value="$PROJECT_DIR$/tests/unit/App.spec.ts" />
       <test-names>
-        <test-name value="check the correct current date" />
+        <test-name value="App" />
+        <test-name value="check if we can add birthday in double" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -116,18 +117,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.App.check if we can add birthday in double" />
+        <item itemvalue="Jest.App" />
         <item itemvalue="Jest.details about the birthday date" />
         <item itemvalue="Jest.details the date of birth" />
         <item itemvalue="Jest.get the remaining days to one birthday" />
-        <item itemvalue="Jest.check the correct current date" />
-        <item itemvalue="Jest.check the correct current Time" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0175569e-ea5a-4b14-a06b-c02d7c3e536b" name="Changes" comment="" />
+      <changelist id="a851e385-0b59-4d74-8a16-9da9ed3e0d1b" name="Changes" comment="" />
       <created>1636489184336</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -136,6 +137,7 @@
       <workItem from="1636659137686" duration="22039000" />
       <workItem from="1636754578656" duration="145000" />
       <workItem from="1636794054517" duration="9422000" />
+      <workItem from="1637060757764" duration="2266000" />
     </task>
     <servers />
   </component>

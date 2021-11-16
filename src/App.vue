@@ -98,6 +98,8 @@ export default defineComponent({
     onBeforeMount(() => {
       if (localStorage.getItem('value')) {
         birthdays.value = JSON.parse(localStorage.getItem('value') || '[]')
+      }else{
+        localStorage.setItem('value', '[]')
       }
     })
 
