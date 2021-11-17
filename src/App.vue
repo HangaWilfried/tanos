@@ -1,53 +1,59 @@
 <template>
-  <Header>
-    <template #default>
-      <header>
-        <nav>
-          <h1>{{nextYear}} BIRTHDAYS APP</h1>
-        </nav>
-        <div>
-          {{countBirthdays}} birthdays
-        </div>
-      </header>
-    </template>
-  </Header>
-
-  <main>
-    <Form @submit="addNewBirthday"/>
-  </main>
-
-  <footer>
-    <Birth v-for="(birthday, index) in birthdays" :key="index">
+  <div class="grid grid-cols-2 grid-row-2 gap-6 my-10 mx-20">
+    <Header>
       <template #default>
-        <div>
-          <p>{{birthday.fullName}}</p>
-          <p>
-            <span>
-              birthday: {{
-                `
-                  ${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date}
-                  ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}
-                `
-              }}
-            </span>
-            <span>
-              birth: {{
+        <header class="text-red-600 bg-blue-100 py-5 px-20 mb-20 rounded-12 row-start-2 row-end-4">
+          <nav>
+            <h1>{{nextYear}} BIRTHDAYS APP</h1>
+          </nav>
+          <div>
+            {{countBirthdays}} birthdays
+          </div>
+        </header>
+      </template>
+    </Header>
+
+    <main class="row-span-1 cols-span-1">
+      <Form @submit="addNewBirthday"/>
+    </main>
+
+    <table class="row-start-1 row-end-4 cols-span-1">
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Date of Birthday</th>
+        <th>Remaining Days To Birthday</th>
+        <th>Adding</th>
+        <th>Delete</th>
+      </tr>
+      <Birth v-for="(birthday, index) in birthdays" :key="index">
+        <template #default>
+          <tr>
+            <td class="text-blue-600">{{birthday.fullName}}</td>
+            <td class="text-green-400">
+              {{
                 `
                   ${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date}
                   ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}
                 `
               }}
-            </span>
-          </p>
-          <p>less than {{getRemaining(aboutBirthday(birthday.dateOfBirth))}} days</p>
-          <p>added
-            <span>{{`${getTime().date}${getTime().month}${getTime().year}`}}</span>
-            <span>{{`${getHours().hour}:${getHours().minute}`}}</span></p>
-          <p @click="deleteBirthday">x</p>
-        </div>
-      </template>
-    </Birth>
-  </footer>
+            </td>
+            <td class="text-gray-400">
+              {{
+                `
+                  ${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date}
+                  ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}
+                `
+              }}
+            </td>
+            <td class="text-yellow-800">{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</td>
+            <td class="text-gray-500">{{`${getTime().date}${getTime().month}${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</td>
+            <td><span @click="deleteBirthday" class="rounded-full h-8 w-8 bg-red-400"></span></td>
+          </tr>
+        </template>
+      </Birth>
+    </table>
+  </div>
 </template>
 
 <script lang="ts">

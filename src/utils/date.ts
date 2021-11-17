@@ -34,7 +34,6 @@ export const getRemaining = (birthdayInfo:Info):number => {
 
 export const formatNumber = (guessNumber:number):number|string => guessNumber < 10 ? `0${guessNumber}` : guessNumber
 
-
 export const getTime = ():Birth => {
   const time = new Date()
   return {
@@ -44,7 +43,7 @@ export const getTime = ():Birth => {
   }
 }
 
-export const getHours = ():Object => {
+export const getHours = () => {
   const time = new Date()
   return {
     hour: formatNumber(time.getHours()),

@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a851e385-0b59-4d74-8a16-9da9ed3e0d1b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalStorage/storage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/storage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManageDate/dateSetting.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/date.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/time.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/date.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/date.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,7 @@
         <option value="Vue Single File Component" />
         <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -48,7 +49,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/unit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -154,6 +156,7 @@
       <workItem from="1636754578656" duration="145000" />
       <workItem from="1636794054517" duration="9422000" />
       <workItem from="1637060757764" duration="2889000" />
+      <workItem from="1637152501271" duration="4791000" />
     </task>
     <servers />
   </component>
