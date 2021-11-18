@@ -49,7 +49,7 @@
             </td>
             <td class="cell text-purple-600">{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</td>
             <td class="cell text-gray-900">{{`${getTime().date} ${getTime().month} ${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</td>
-            <td><div @click="deleteBirthday" class="ml-36 rounded-full h-7 w-7 bg-red-500"></div></td>
+            <td class="cell"><div @click="deleteBirthday" class="ml-36 rounded-full h-7 w-7 bg-red-500"></div></td>
           </tr>
         </template>
       </Birth>
