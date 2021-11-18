@@ -43,7 +43,12 @@ export const getTime = ():Birth => {
   }
 }
 
-export const getHours = () => {
+interface time{
+  hour: string|number,
+  minute: string|number
+}
+
+export const getHours = ():time => {
   const time = new Date()
   return {
     hour: formatNumber(time.getHours()),
