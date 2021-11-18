@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a851e385-0b59-4d74-8a16-9da9ed3e0d1b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalStorage/storage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalStorage/storage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManageDate/dateSetting.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManageDate/dateSetting.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Birth.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Birth.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/App.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/App.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/Birth.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/Birth.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/Form.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/Form.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/Header.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/Header.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/time.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/time.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/esthetic/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/date.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/date.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +20,7 @@
         <option value="Vue Single File Component" />
         <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -41,6 +36,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="20hG0hN7EWzsCh7pt64VeGRcoR3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -51,50 +49,73 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Jest.App.check if we can add birthday in double">
-    <configuration name="App" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/tests/unit/App.spec.ts" />
-      <test-names>
-        <test-name value="App" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="App.check if we can add birthday in double" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/unit/App.spec.ts" />
-      <test-names>
-        <test-name value="App" />
-        <test-name value="check if we can add birthday in double" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="details about the birthday date" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/unit" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Jest.dateSettings.check the correct current date (1)">
+    <configuration name="check the correct current Time" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/unit/time.spec.ts" />
+      <test-file value="$PROJECT_DIR$/src/utils/tests/getHours.spec.ts" />
       <test-names>
-        <test-name value="details about the birthday date" />
+        <test-name value="check the correct current Time" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="check the correct current date" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/utils/tests/getTime.spec.ts" />
+      <test-names>
+        <test-name value="check the correct current date" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="dateSettings.check the correct current date (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/unit/utils/date.spec.ts" />
+      <test-names>
+        <test-name value="dateSettings" />
+        <test-name value="check the correct current date" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="dateSettings.check the correct current date" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/utils/tests/getTime.spec.ts" />
+      <test-names>
+        <test-name value="dateSettings" />
+        <test-name value="check the correct current date" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -105,32 +126,19 @@
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/unit/time.spec.ts" />
+      <test-file value="$PROJECT_DIR$/tests/unit/utils/format.spec.ts" />
       <test-names>
         <test-name value="details the date of birth" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="get the remaining days to one birthday" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/@vue/cli-service" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/unit/time.spec.ts" />
-      <test-names>
-        <test-name value="get the remaining days to one birthday" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.App.check if we can add birthday in double" />
-        <item itemvalue="Jest.App" />
-        <item itemvalue="Jest.details about the birthday date" />
+        <item itemvalue="Jest.dateSettings.check the correct current date (1)" />
         <item itemvalue="Jest.details the date of birth" />
-        <item itemvalue="Jest.get the remaining days to one birthday" />
+        <item itemvalue="Jest.check the correct current Time" />
+        <item itemvalue="Jest.dateSettings.check the correct current date" />
+        <item itemvalue="Jest.check the correct current date" />
       </list>
     </recent_temporary>
   </component>
@@ -147,6 +155,7 @@
       <workItem from="1636754578656" duration="145000" />
       <workItem from="1636794054517" duration="9422000" />
       <workItem from="1637060757764" duration="2889000" />
+      <workItem from="1637152501271" duration="4791000" />
     </task>
     <servers />
   </component>

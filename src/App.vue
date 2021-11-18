@@ -1,53 +1,60 @@
 <template>
-  <Header>
-    <template #default>
-      <header>
-        <nav>
-          <h1>{{nextYear}} BIRTHDAYS APP</h1>
-        </nav>
-        <div>
-          {{countBirthdays}} birthdays
-        </div>
-      </header>
-    </template>
-  </Header>
-
-  <main>
-    <Form @submit="addNewBirthday"/>
-  </main>
-
-  <footer>
-    <Birth v-for="(birthday, index) in birthdays" :key="index">
+  <div class="grid grid-cols-2 items-stretch gap-2 m-2">
+    <Header>
       <template #default>
-        <div>
-          <p>{{birthday.fullName}}</p>
-          <p>
-            <span>
-              birthday: {{
-                `
-                  ${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date}
-                  ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}
-                `
-              }}
-            </span>
-            <span>
-              birth: {{
+        <header class="col-start-1 row-start-1 border border-black bg-gray-900 text-white text-sm p-20 self-stretch">
+          <nav>
+            <h1 class="text-white text-5xl font-bold italic">{{nextYear}} BIRTHDAYS APP</h1>
+          </nav>
+          <div class="text-white text-7xl my-32 font-thin">
+            {{countBirthdays}} added
+          </div>
+        </header>
+      </template>
+    </Header>
+
+    <main class="col-start-2 col-end-3 row-start-1 flex flex-col gap-2 items-center bg-gray-100 px-64 py-10">
+      <Form @submit="addNewBirthday"/>
+    </main>
+  </div>
+  <div class="mx-2 mt-20">
+    <table class="border border-collapse bg-white w-full">
+      <tr>
+        <th class="title">Name</th>
+        <th class="title">Date of Birth</th>
+        <th class="title">Date of Birthday</th>
+        <th class="title">Remaining Days To Birthday</th>
+        <th class="title">Added</th>
+        <th class="title">Delete</th>
+      </tr>
+      <Birth v-for="(birthday, index) in birthdays" :key="index">
+        <template #default>
+          <tr>
+            <td class="cell text-yellow-700">{{birthday.fullName}}</td>
+            <td class="cell text-blue-500">
+              {{
                 `
                   ${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date}
                   ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}
                 `
               }}
-            </span>
-          </p>
-          <p>less than {{getRemaining(aboutBirthday(birthday.dateOfBirth))}} days</p>
-          <p>added
-            <span>{{`${getTime().date}${getTime().month}${getTime().year}`}}</span>
-            <span>{{`${getHours().hour}:${getHours().minute}`}}</span></p>
-          <p @click="deleteBirthday">x</p>
-        </div>
-      </template>
-    </Birth>
-  </footer>
+            </td>
+            <td class="cell text-green-800">
+              {{
+                `
+                  ${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date}
+                  ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}
+                `
+              }}
+            </td>
+            <td class="cell text-purple-600">{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</td>
+            <td class="cell text-gray-900">{{`${getTime().date} ${getTime().month} ${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</td>
+            <td><div @click="deleteBirthday" class="ml-36 rounded-full h-7 w-7 bg-red-500"></div></td>
+          </tr>
+        </template>
+      </Birth>
+    </table>
+  </div>
 </template>
 
 <script lang="ts">
@@ -59,8 +66,8 @@ import Birth from './components/Birth.vue'
 
 import { User } from './interface/User'
 
-import { format, aboutBirthday, getRemaining, getTime, getHours } from './ManageDate/dateSetting'
-import { setSave } from './LocalStorage/storage'
+import { format, aboutBirthday, getRemaining, getTime, getHours } from './utils/date'
+import { setSave } from './utils/storage'
 
 export default defineComponent({
 

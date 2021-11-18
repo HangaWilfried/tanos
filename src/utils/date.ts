@@ -32,9 +32,7 @@ export const getRemaining = (birthdayInfo:Info):number => {
   return (birthday.valueOf() - now.valueOf()) / DAYS_CONVERSION
 }
 
-const formatNumber = (guessNumber:number):number|string => {
-  return guessNumber < 10 ? `0${guessNumber}` : guessNumber
-}
+export const formatNumber = (guessNumber:number):number|string => guessNumber < 10 ? `0${guessNumber}` : guessNumber
 
 export const getTime = ():Birth => {
   const time = new Date()
@@ -45,7 +43,12 @@ export const getTime = ():Birth => {
   }
 }
 
-export const getHours = ():Object => {
+interface time{
+  hour: string|number,
+  minute: string|number
+}
+
+export const getHours = ():time => {
   const time = new Date()
   return {
     hour: formatNumber(time.getHours()),

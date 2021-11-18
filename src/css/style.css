@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .title{
+        @apply border border-gray-300 w-1/6 py-10 px-5 font-bold text-xl uppercase text-white bg-gray-900
+    }
+    .color {
+        @apply text-lg text-purple-500 block font-thin mb-4;
+    }
+    .form{
+        @apply w-96 border-solid border-2 border-purple-100 p-4 transition-colors focus:border-purple-600 outline-none rounded text-xl font-extralight
+    }
+    .cell{
+        @apply border border-gray-300 py-2 w-1/6 py-10 px-5 font-bold text-lg uppercase
+    }
+}
