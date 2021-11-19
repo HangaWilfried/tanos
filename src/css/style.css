@@ -3,15 +3,31 @@
 @tailwind utilities;
 @layer components {
     .title{
-        @apply border border-gray-300 md:w-1/6 md:py-10 md:px-5 font-bold md:text-xl uppercase text-white bg-gray-900
+        @apply sm:py-2 sm:px-2 sm:text-center sm:text-lg
+        md:w-1/6 md:py-10 md:px-5 md:font-bold md:text-xl md:uppercase
+        lg:w-1/6 lg:py-10 lg:px-5 lg:font-bold md:text-xl lg:uppercase
+        2xl:w-1/6 2xl:py-10 2xl:px-5 2xl:font-bold 2xl:text-xl 2xl:uppercase
+        text-white bg-gray-900 border border-gray-300
     }
     .color {
-        @apply sm:text-xl sm:mb-2 text-lg text-purple-500 block font-thin md:mb-4;
+        @apply sm:text-xl sm:mb-2
+        text-lg text-purple-500 block font-thin
+        md:mb-4
+        lg:mb-4
+        2xl:mb-4
     }
     .form{
-        @apply sm:w-full md:w-96 border-solid border-2 border-purple-100 p-4 transition-colors focus:border-purple-600 outline-none rounded text-xl font-extralight
+        @apply sm:w-full
+        md:w-96
+        2xl:w-96
+        lg:w-96
+        border-solid border-2 border-purple-100 p-4 transition-colors focus:border-purple-600 outline-none rounded text-xl font-extralight
     }
     .cell{
-        @apply border border-gray-300 md:py-2 md:w-1/6 md:py-10 md:px-5 font-bold uppercase
+        @apply sm:py-2 sm:px-1 sm:w-1/2 sm:text-center
+        border border-gray-300 font-bold uppercase
+        md:py-2 md:w-1/6 md:py-10 md:px-5
+        lg:py-2 lg:w-1/6 lg:py-10 lg:px-5
+        2xl:py-2 2xl:w-1/6 2xl:py-10 2xl:px-5
     }
 }
