@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 items-stretch gap-2 m-2">
+  <div class="sm:flex sm:flex-col sm:place-items-center grid grid-cols-2 items-stretch gap-2 m-2">
     <Header>
       <template #default>
         <header class="col-start-1 row-start-1 border border-black bg-gray-900 text-white text-sm p-20 self-stretch">
@@ -49,7 +49,7 @@
             </td>
             <td class="cell text-purple-600">{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</td>
             <td class="cell text-gray-900">{{`${getTime().date} ${getTime().month} ${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</td>
-            <td><div @click="deleteBirthday" class="ml-36 rounded-full h-7 w-7 bg-red-500"></div></td>
+            <td class="cell"><div @click="deleteBirthday" class="ml-32 bg-red-500 text-white text-2xs rounded-full w-7 h-7 text-center">x</div></td>
           </tr>
         </template>
       </Birth>
