@@ -30,6 +30,7 @@
 xl:mx-2 lg:mt-20
 md:mx-2 lg:mt-20">
     <table class="border border-collapse bg-white lg:w-full
+sm:overflow-x-scroll
 xl:w-full
 md:w-full">
       <tr>
