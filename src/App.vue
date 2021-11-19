@@ -1,5 +1,5 @@
 <template>
-  <div class="sm:flex sm:flex-col sm:place-items-center grid grid-cols-2 items-stretch gap-2 m-2">
+  <div class="sm:flex sm:flex-col sm:gap-0 sm:m-0 sm:content-center grid grid-cols-2 items-stretch gap-2 m-2">
     <Header>
       <template #default>
         <header class="col-start-1 row-start-1 border border-black bg-gray-900 text-white text-sm p-20 self-stretch">
@@ -13,12 +13,12 @@
       </template>
     </Header>
 
-    <main class="col-start-2 col-end-3 row-start-1 flex flex-col gap-2 items-center bg-gray-100 px-64 py-10">
+    <main class="sm:p-5 sm:flex sm:flex-col md:items-center bg-gray-100 md:px-64 md:py-10 md:col-start-2 md:col-end-3 md:row-start-1">
       <Form @submit="addNewBirthday"/>
     </main>
   </div>
-  <div class="mx-2 mt-20">
-    <table class="border border-collapse bg-white w-full">
+  <div class="sm:flex sm:flex-col sm:content-center md:mx-2 md:mt-20">
+    <table class="border border-collapse bg-white md:w-full">
       <tr>
         <th class="title">Name</th>
         <th class="title">Date of Birth</th>
@@ -49,7 +49,7 @@
             </td>
             <td class="cell text-purple-600">{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</td>
             <td class="cell text-gray-900">{{`${getTime().date} ${getTime().month} ${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</td>
-            <td class="cell"><div @click="deleteBirthday" class="ml-32 bg-red-500 text-white text-2xs rounded-full w-7 h-7 text-center">x</div></td>
+            <td class="cell"><div @click="deleteBirthday" class="md:ml-32 md:bg-red-500 text-white md:text-2xs rounded-full md:w-7 md:h-7 text-center">x</div></td>
           </tr>
         </template>
       </Birth>

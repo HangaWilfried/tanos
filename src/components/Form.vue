@@ -12,7 +12,7 @@
     <input type="date" v-model="user.dateOfBirth" class="form">
   </div>
   <div class="mt-2">
-    <button @click="submit" class="w-96 my-5 rounded py-4 px-8 bg-purple-600 text-white text-2xl">Submit</button>
+    <button @click="submit" class="sm:w-full w-96 my-5 rounded py-4 px-8 bg-purple-600 text-white text-2xl">Submit</button>
   </div>
 </template>
 
