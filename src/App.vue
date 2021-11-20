@@ -1,6 +1,6 @@
 <template>
   <main class="flex flex-col content-center text-green-400 gap-16">
-    <div class="bg-gray-700 py-32 flex flex-col items-center">
+    <div class="bg-gray-700 py-32 flex flex-col items-center gap-9">
       <Header>
         <template #default>
           <h1 class="flex flex-row gap-2 text-3xl font-bold">
