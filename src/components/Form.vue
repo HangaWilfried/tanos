@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10">
+  <div>
     <span class="color">last name</span>
     <input type="text" v-model="lastName" class="form">
   </div>
