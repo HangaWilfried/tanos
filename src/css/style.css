@@ -2,64 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-    .container{
-        @apply sm:flex sm:flex-col sm:gap-0 sm:m-0 sm:content-center
-        md:grid md:grid-cols-2 md:items-stretch md:gap-2 md:m-2
-        lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-2 lg:m-2
-        2xl:grid 2xl:grid-cols-2 2xl:items-stretch 2xl:gap-2 2xl:m-2
+    .smallScreen{
+        @apply sm:grid sm:grid-cols-1 hidden
     }
-    .header{
-        @apply sm:w-full
-        md:col-start-1 md:row-start-1 md:self-stretch
-        lg:col-start-1 lg:row-start-1 lg:self-stretch
-        2xl:col-start-1 2xl:row-start-1 2xl:self-stretch
-        border border-black bg-gray-900 text-white text-sm p-20
+    .smallScreenDiv{
+        @apply sm:mt-1 sm:shadow-2xl
     }
-    .delete{
-        @apply text-white text-center rounded-full sm:ml-5 sm:bg-red-500 sm:w-6 sm:h-6 lg:text-xl lg:ml-32 lg:bg-red-500 lg:w-7 lg:h-7 md:text-xl md:m-auto md:bg-red-500 md:w-7 md:h-7
-        2xl:text-2xl 2xl:m-auto 2xl:bg-red-500 2xl:w-7 2xl:h-7
+    .smallScreenPara{
+        @apply sm:flex sm:flex-row sm:justify-between sm:border-t sm:border-b sm:border-gray-100 sm:p-5
     }
-    .title{
-        @apply sm:py-2 sm:px-2 sm:text-center sm:text-lg
-        md:w-1/6 md:py-10 md:px-5 md:font-bold md:text-xl md:uppercase
-        lg:w-1/6 lg:py-10 lg:px-5 lg:font-bold md:text-xl lg:uppercase
-        2xl:w-1/6 2xl:py-10 2xl:px-5 2xl:font-bold 2xl:text-xl 2xl:uppercase
-        text-white bg-gray-900 border border-gray-300
+    .largeScreen{
+        @apply sm:hidden flex flex-col m-0
     }
-    .main{
-        @apply sm:p-5 sm:flex sm:flex-col sm:w-full bg-gray-100
-        md:items-center md:px-64 md:py-10 md:col-start-2 md:col-end-3 md:row-start-1
-        lg:items-center lg:px-64 lg:py-10 lg:col-start-2 lg:col-end-3 lg:row-start-1
-        2xl:items-center 2xl:px-64 2xl:py-10 2xl:col-start-2 2xl:col-end-3 2xl:row-start-1
+    .largeScreenPara{
+        @apply sm:hidden grid grid-cols-6 bg-white mt-16
     }
-    .color {
-        @apply sm:text-xl sm:mb-2
-        text-lg text-purple-500 block font-thin
-        md:mb-4
-        lg:mb-4
-        2xl:mb-4
-    }
-    .form{
-        @apply sm:w-full
-        md:w-96
-        2xl:w-96
-        lg:w-96
-        bg-white border-solid border-2 border-purple-100 p-4 transition-colors focus:border-purple-600 outline-none rounded text-xl font-extralight
-    }
-    .cell{
-        @apply sm:py-2 sm:px-1 sm:w-1/2 sm:text-center
-        border border-gray-300 font-bold uppercase
-        md:py-2 md:w-1/6 md:py-10 md:px-5
-        lg:py-2 lg:w-1/6 lg:py-10 lg:px-5
-        2xl:py-2 2xl:w-1/6 2xl:py-10 2xl:px-5
-    }
-    .listContainer{
-        @apply sm:flex sm:flex-col sm:items-center lg:mx-2 lg:mt-20 xl:mx-2 lg:mt-20 md:mx-2 lg:mt-20
-    }
-
-
-
-    .items{
-        @apply border text-center p-6
+    .largeScreenSpan{
+        @apply sm:hidden border-gray-50 shadow-sm text-center
+        pt-28 pr-32 pb-24 pl-10 text-3xl
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*@layer components {*/
+/*    .container{*/
+/*        @apply sm:flex sm:flex-col sm:gap-0 sm:m-0 sm:content-center*/
+/*        md:grid md:grid-cols-2 md:items-stretch md:gap-2 md:m-2*/
+/*        lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-2 lg:m-2*/
+/*        2xl:grid 2xl:grid-cols-2 2xl:items-stretch 2xl:gap-2 2xl:m-2*/
+/*    }*/
+/*    .header{*/
+/*        @apply sm:w-full*/
+/*        md:col-start-1 md:row-start-1 md:self-stretch*/
+/*        lg:col-start-1 lg:row-start-1 lg:self-stretch*/
+/*        2xl:col-start-1 2xl:row-start-1 2xl:self-stretch*/
+/*        border border-black bg-gray-900 text-white text-sm p-20*/
+/*    }*/
+/*    .delete{*/
+/*        @apply text-white text-center rounded-full sm:ml-5 sm:bg-red-500 sm:w-6 sm:h-6 lg:text-xl lg:ml-32 lg:bg-red-500 lg:w-7 lg:h-7 md:text-xl md:m-auto md:bg-red-500 md:w-7 md:h-7*/
+/*        2xl:text-2xl 2xl:m-auto 2xl:bg-red-500 2xl:w-7 2xl:h-7*/
+/*    }*/
+/*    .title{*/
+/*        @apply sm:py-2 sm:px-2 sm:text-center sm:text-lg*/
+/*        md:w-1/6 md:py-10 md:px-5 md:font-bold md:text-xl md:uppercase*/
+/*        lg:w-1/6 lg:py-10 lg:px-5 lg:font-bold md:text-xl lg:uppercase*/
+/*        2xl:w-1/6 2xl:py-10 2xl:px-5 2xl:font-bold 2xl:text-xl 2xl:uppercase*/
+/*        text-white bg-gray-900 border border-gray-300*/
+/*    }*/
+/*    .main{*/
+/*        @apply sm:p-5 sm:flex sm:flex-col sm:w-full bg-gray-100*/
+/*        md:items-center md:px-64 md:py-10 md:col-start-2 md:col-end-3 md:row-start-1*/
+/*        lg:items-center lg:px-64 lg:py-10 lg:col-start-2 lg:col-end-3 lg:row-start-1*/
+/*        2xl:items-center 2xl:px-64 2xl:py-10 2xl:col-start-2 2xl:col-end-3 2xl:row-start-1*/
+/*    }*/
+/*    .color {*/
+/*        @apply sm:text-xl sm:mb-2*/
+/*        text-lg text-purple-500 block font-thin*/
+/*        md:mb-4*/
+/*        lg:mb-4*/
+/*        2xl:mb-4*/
+/*    }*/
+/*    .form{*/
+/*        @apply sm:w-full*/
+/*        md:w-96*/
+/*        2xl:w-96*/
+/*        lg:w-96*/
+/*        bg-white border-solid border-2 border-purple-100 p-4 transition-colors focus:border-purple-600 outline-none rounded text-xl font-extralight*/
+/*    }*/
+/*    .cell{*/
+/*        @apply sm:py-2 sm:px-1 sm:w-1/2 sm:text-center*/
+/*        border border-gray-300 font-bold uppercase*/
+/*        md:py-2 md:w-1/6 md:py-10 md:px-5*/
+/*        lg:py-2 lg:w-1/6 lg:py-10 lg:px-5*/
+/*        2xl:py-2 2xl:w-1/6 2xl:py-10 2xl:px-5*/
+/*    }*/
+/*    .listContainer{*/
+/*        @apply sm:flex sm:flex-col sm:items-center lg:mx-2 lg:mt-20 xl:mx-2 lg:mt-20 md:mx-2 lg:mt-20*/
+/*    }*/
+
+
+
+/*    .items{*/
+/*        @apply border text-center p-6*/
+/*    }*/
+/*}*/

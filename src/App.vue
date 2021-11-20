@@ -19,42 +19,57 @@
       <Form @submit="addNewBirthday"/>
     </div>
 
-    <div class="flex flex-col gap-y-1">
-      <p class="grid grid-cols-6 gap-x-10 border-gray-700 bg-gray-700 pl-2 pr-5 py-2 text-center items-center">
-        <span>Name</span>
-        <span>Date of Birth</span>
-        <span>Date of Birthday</span>
-        <span>Remaining Days To Birthday</span>
-        <span>Added</span>
-        <span>Delete</span>
-      </p>
-      <Birth v-for="(birthday, index) in birthdays" :key="index">
-        <template #default>
-          <p class="grid grid-cols-6 gap-x-10 border-gray-700 bg-gray-700 pl-2 pr-4 py-2 text-center items-center">
-            <span>{{birthday.fullName}}</span>
-            <span>
-              {{
-                `
-                  ${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date}
-                  ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}
-                `
-              }}
-            </span>
-            <span>
-              {{
-                `
-                  ${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date}
-                  ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}
-            `
-              }}
-            </span>
-            <span>{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</span>
-            <span>{{`${getTime().date} ${getTime().month} ${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</span>
-            <span @click="deleteBirthday">x</span>
+    <Birth v-for="(birthday, index) in birthdays" :key="index">
+      <template #default>
+        <div class="largeScreen">
+          <p class="largeScreenPara">
+            <span class="largeScreenSpan">Dame</span>
+            <span class="largeScreenSpan">Date of birth</span>
+            <span class="largeScreenSpan">Date of birthday</span>
+            <span class="largeScreenSpan">Remainings days to birthday</span>
+            <span class="largeScreenSpan">Added</span>
+            <span class="largeScreenSpan">Delete</span>
           </p>
-        </template>
-      </Birth>
-    </div>
+          <p class="largeScreenPara">
+            <span class="largeScreenSpan">{{birthday.fullName}}</span>
+            <span class="largeScreenSpan">{{`${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date} ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}`}}</span>
+            <span class="largeScreenSpan">{{`${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date} ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}`}}</span>
+            <span class="largeScreenSpan">{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</span>
+            <span class="largeScreenSpan">{{`${getTime().date} ${getTime().month} ${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</span>
+            <span  class="largeScreenSpan" @click="deleteBirthday">x</span>
+          </p>
+        </div>
+
+        <div class="smallScreen">
+          <div class="smallScreenDiv">
+            <p class="smallScreenPara">
+              <span>Name</span>
+              <span>{{birthday.fullName}}</span>
+            </p>
+            <p class="smallScreenPara">
+              <span>Date of birth</span>
+              <span>{{`${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date} ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}`}}</span>
+            </p>
+            <p class="smallScreenPara">
+              <span>Date of birthday</span>
+              <span>{{`${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date} ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}`}}</span>
+            </p>
+            <p class="smallScreenPara">
+              <span>Remaining days to birthday</span>
+              <span>{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</span>
+            </p>
+            <p class="smallScreenPara">
+              <span>Added</span>
+              <span>{{`${getTime().date} ${getTime().month} ${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</span>
+            </p>
+            <p class="smallScreenPara">
+              <span>Delete</span>
+              <span @click="deleteBirthday">x</span>
+            </p>
+          </div>
+        </div>
+      </template>
+    </Birth>
   </main>
 </template>
 
