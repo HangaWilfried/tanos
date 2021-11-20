@@ -6,10 +6,10 @@
         @apply sm:grid sm:grid-cols-1 hidden
     }
     .smallScreenDiv{
-        @apply sm:mt-1 sm:shadow-2xl
+        @apply sm:mb-2 sm:shadow-2xl
     }
     .smallScreenPara{
-        @apply sm:flex sm:flex-row sm:justify-between sm:border-t sm:border-b sm:border-gray-100 sm:p-5
+        @apply sm:flex sm:flex-row sm:justify-between sm:border-t sm:border-b sm:border-gray-200 sm:p-5
     }
     .largeScreen{
         @apply sm:hidden flex flex-col m-0

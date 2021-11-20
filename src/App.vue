@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col content-center text-yellow-600 gap-16">
+  <main class="flex flex-col content-center text-green-400 gap-16">
     <div class="bg-gray-700 px-28 py-32 flex flex-col items-stretch gap-9">
       <Header>
         <template #default>
@@ -24,9 +24,9 @@
         <div class="largeScreen">
           <p class="largeScreenPara">
             <span class="largeScreenSpan">Dame</span>
-            <span class="largeScreenSpan">Date of birth</span>
-            <span class="largeScreenSpan">Date of birthday</span>
-            <span class="largeScreenSpan">Remainings days to birthday</span>
+            <span class="largeScreenSpan">Date Of Birth</span>
+            <span class="largeScreenSpan">Date Of Birthday</span>
+            <span class="largeScreenSpan">Remaining Days To Birthday</span>
             <span class="largeScreenSpan">Added</span>
             <span class="largeScreenSpan">Delete</span>
           </p>
@@ -43,28 +43,28 @@
         <div class="smallScreen">
           <div class="smallScreenDiv">
             <p class="smallScreenPara">
-              <span>Name</span>
-              <span>{{birthday.fullName}}</span>
+              <span class="text-gray-700">Name</span>
+              <span class="font-bold">{{birthday.fullName}}</span>
             </p>
             <p class="smallScreenPara">
-              <span>Date of birth</span>
-              <span>{{`${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date} ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}`}}</span>
+              <span class="text-gray-700">Date of birth</span>
+              <span class="font-bold">{{`${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date} ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}`}}</span>
             </p>
             <p class="smallScreenPara">
-              <span>Date of birthday</span>
-              <span>{{`${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date} ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}`}}</span>
+              <span class="text-gray-700">Date of birthday</span>
+              <span class="font-bold">{{`${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date} ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}`}}</span>
             </p>
             <p class="smallScreenPara">
-              <span>Remaining days to birthday</span>
-              <span>{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</span>
+              <span class="text-gray-700">Remaining days to birthday</span>
+              <span class="font-bold">{{getRemaining(aboutBirthday(birthday.dateOfBirth))}}</span>
             </p>
             <p class="smallScreenPara">
-              <span>Added</span>
-              <span>{{`${getTime().date} ${getTime().month} ${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</span>
+              <span class="text-gray-700">Added</span>
+              <span class="font-bold">{{`${getTime().date} ${getTime().month} ${getTime().year}`}} At {{`${getHours().hour}:${getHours().minute}`}}</span>
             </p>
             <p class="smallScreenPara">
-              <span>Delete</span>
-              <span @click="deleteBirthday">x</span>
+              <span class="text-gray-700">Delete</span>
+              <span class="text-green-500 font-bold text-2xl" @click="deleteBirthday">x</span>
             </p>
           </div>
         </div>
