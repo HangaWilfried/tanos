@@ -15,7 +15,7 @@
       </Header>
     </div>
 
-    <div>
+    <div class="bg-green-100 p-10">
       <Form @submit="addNewBirthday"/>
     </div>
 

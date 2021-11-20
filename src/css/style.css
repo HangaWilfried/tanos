@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
+    .color {
+        @apply sm:text-xl sm:mb-2
+        text-lg text-green-500 block font-thin
+        md:mb-4
+        lg:mb-4
+        2xl:mb-4
+    }
+    .form{
+        @apply sm:w-full
+        md:w-96
+        2xl:w-96
+        lg:w-96
+        bg-white border-solid border-2 border-green-100 p-4 transition-colors focus:border-green-600 outline-none rounded text-xl font-extralight
+    }
     .smallScreen{
         @apply sm:grid sm:grid-cols-1 hidden
     }
@@ -92,20 +106,7 @@
 /*        lg:items-center lg:px-64 lg:py-10 lg:col-start-2 lg:col-end-3 lg:row-start-1*/
 /*        2xl:items-center 2xl:px-64 2xl:py-10 2xl:col-start-2 2xl:col-end-3 2xl:row-start-1*/
 /*    }*/
-/*    .color {*/
-/*        @apply sm:text-xl sm:mb-2*/
-/*        text-lg text-purple-500 block font-thin*/
-/*        md:mb-4*/
-/*        lg:mb-4*/
-/*        2xl:mb-4*/
-/*    }*/
-/*    .form{*/
-/*        @apply sm:w-full*/
-/*        md:w-96*/
-/*        2xl:w-96*/
-/*        lg:w-96*/
-/*        bg-white border-solid border-2 border-purple-100 p-4 transition-colors focus:border-purple-600 outline-none rounded text-xl font-extralight*/
-/*    }*/
+/*
 /*    .cell{*/
 /*        @apply sm:py-2 sm:px-1 sm:w-1/2 sm:text-center*/
 /*        border border-gray-300 font-bold uppercase*/
