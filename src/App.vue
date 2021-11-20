@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col content-center text-yellow-600 gap-48">
+  <main class="flex flex-col content-center text-yellow-600 gap-16">
     <div class="bg-gray-700 px-28 py-32 flex flex-col items-stretch gap-9">
       <Header>
         <template #default>
