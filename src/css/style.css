@@ -29,11 +29,10 @@
         @apply sm:hidden flex flex-col m-0
     }
     .largeScreenPara{
-        @apply sm:hidden grid grid-cols-6 bg-white mt-16
+        @apply sm:hidden grid grid-cols-6 bg-white place-items-center gap-x-7
     }
     .largeScreenSpan{
-        @apply sm:hidden border-gray-50 shadow-sm text-center
-        pt-28 pr-32 pb-24 pl-10 text-3xl
+        @apply sm:hidden shadow-sm text-lg
     }
 }
 

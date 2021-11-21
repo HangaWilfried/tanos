@@ -18,18 +18,19 @@
     <div class="bg-green-100 p-10">
       <Form @submit="addNewBirthday"/>
     </div>
-
+    <div class="largeScreen">
+      <p class="largeScreenPara">
+        <span class="largeScreenSpan">Name</span>
+        <span class="largeScreenSpan">Date Of Birth</span>
+        <span class="largeScreenSpan">Date Of Birthday</span>
+        <span class="largeScreenSpan">Remaining Days To Birthday</span>
+        <span class="largeScreenSpan">Added</span>
+        <span class="largeScreenSpan">Delete</span>
+      </p>
+    </div>
     <Birth v-for="(birthday, index) in birthdays" :key="index">
       <template #default>
         <div class="largeScreen">
-          <p class="largeScreenPara">
-            <span class="largeScreenSpan">Dame</span>
-            <span class="largeScreenSpan">Date Of Birth</span>
-            <span class="largeScreenSpan">Date Of Birthday</span>
-            <span class="largeScreenSpan">Remaining Days To Birthday</span>
-            <span class="largeScreenSpan">Added</span>
-            <span class="largeScreenSpan">Delete</span>
-          </p>
           <p class="largeScreenPara">
             <span class="largeScreenSpan">{{birthday.fullName}}</span>
             <span class="largeScreenSpan">{{`${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date} ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}`}}</span>
