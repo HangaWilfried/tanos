@@ -1,13 +1,13 @@
 <template>
-  <main class="flex flex-col content-center text-green-400 gap-0">
-    <div class="bg-gray-700 py-32 flex flex-col items-center gap-9">
+  <main class="grid grid-cols-2 sm:flex sm:flex-col sm:content-center sm:text-green-400 sm:gap-0">
+    <div class="bg-gray-700 py-32 flex flex-col items-center gap-9 shadow-2xl">
       <Header>
         <template #default>
           <h1 class="flex flex-row gap-2 text-3xl font-bold">
-            <span>{{nextYear}}</span>
-            <span>BIRTHDAYS APP</span>
+            <span class="text-white font-bold">{{nextYear}}</span>
+            <span class="text-white font-bold">BIRTHDAYS APP</span>
           </h1>
-          <h4 class="flex flex-row gap-2 text-5xl font-thin italic">
+          <h4 class="text-white flex flex-row gap-2 text-5xl font-thin italic">
             <span>{{countBirthdays}}</span>
             <span>added</span>
           </h4>
@@ -15,17 +15,17 @@
       </Header>
     </div>
 
-    <div class="bg-green-100 p-10">
+    <div class="bg-green-100 p-10 shadow-2xl">
       <Form @submit="addNewBirthday"/>
     </div>
-    <div class="largeScreen">
+    <div class="largeScreen mt-1">
       <p class="largeScreenPara">
-        <span class="largeScreenSpan">Name</span>
-        <span class="largeScreenSpan">Date Of Birth</span>
-        <span class="largeScreenSpan">Date Of Birthday</span>
-        <span class="largeScreenSpan">Remaining Days To Birthday</span>
-        <span class="largeScreenSpan">Added</span>
-        <span class="largeScreenSpan">Delete</span>
+        <span class="largeScreenSpan font-bold bg-green-700 text-white">Name</span>
+        <span class="largeScreenSpan font-bold bg-green-700 text-white">Date Of Birth</span>
+        <span class="largeScreenSpan font-bold bg-green-700 text-white">Date Of Birthday</span>
+        <span class="largeScreenSpan font-bold bg-green-700 text-white">Remaining Days To Birthday</span>
+        <span class="largeScreenSpan font-bold bg-green-700 text-white">Added</span>
+        <span class="largeScreenSpan font-bold bg-green-700 text-white">Delete</span>
       </p>
     </div>
     <Birth v-for="(birthday, index) in birthdays" :key="index">

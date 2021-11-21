@@ -11,9 +11,9 @@
     }
     .form{
         @apply sm:w-full
-        md:w-96
-        2xl:w-96
-        lg:w-96
+        md:w-4/5
+        2xl:w-4/5
+        lg:w-4/5
         bg-white border-solid border-2 border-green-100 p-4 transition-colors focus:border-green-600 outline-none rounded text-xl font-extralight
     }
     .smallScreen{
@@ -26,13 +26,14 @@
         @apply sm:flex sm:flex-row sm:justify-between sm:border-t sm:border-b sm:border-gray-200 sm:p-5
     }
     .largeScreen{
-        @apply sm:hidden flex flex-col m-0
+        @apply sm:hidden col-start-1 col-span-2
     }
     .largeScreenPara{
-        @apply sm:hidden grid grid-cols-6 bg-white place-items-center gap-x-7
+        @apply sm:hidden grid grid-cols-6 bg-white items-stretch
     }
     .largeScreenSpan{
-        @apply sm:hidden shadow-sm text-lg
+        @apply sm:hidden shadow-sm text-lg self-stretch p-5
+        border border-gray-200 text-center
     }
 }
 
