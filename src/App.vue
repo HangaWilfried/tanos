@@ -1,57 +1,59 @@
 <template>
-  <div class="w-full h-full top-0 left-0 absolute bg-zinc-600 text-white text-xl font-sans font-bold flex flex-col items-center justify-center">
-    <Header>
-      <template #default>
-        <header class="flex justify-between gap-x-10 mb-10 items-end">
-          <nav>
-            <h1 class="flex flex-col items-center">
-              <span>{{nextYear}}</span>
-              <span class="font-extrabold">BIRTHDAYS APP</span>
-            </h1>
-          </nav>
-          <div class="bg-white rounded-md text-zinc-500 text-sm px-4 py-2">
-            {{countBirthdays}} birthdays
-          </div>
-        </header>
-      </template>
-    </Header>
-
-    <main class="flex flex-col gap-y-4">
-      <Form @submit="addNewBirthday"/>
-    </main>
-
-    <footer>
-      <Birth v-for="(birthday, index) in birthdays" :key="index">
+  <div class="w-full h-full top-0 left-0 absolute bg-zinc-600 flex flex-col items-center">
+    <div class="bg-white w-3/4 h-full px-3 flex flex-col">
+      <Header>
         <template #default>
-          <div>
-            <p>{{birthday.fullName}}</p>
-            <p>
-            <span>
-              birthday: {{
+          <header class="flex justify-between gap-x-10 mb-10 items-end shadow-2xl shadow-zinc-100 p-4">
+            <nav>
+              <h1 class="flex flex-col items-center">
+                <span class="text-7xl font-medium font-sans">{{nextYear}}</span>
+                <span class="font-extrabold text-lg">BIRTHDAYS APP</span>
+              </h1>
+            </nav>
+            <div class="bg-zinc-500 rounded-md text-white font-bold font-sans text-sm px-4 py-2">
+              {{countBirthdays}} birthdays
+            </div>
+          </header>
+        </template>
+      </Header>
+
+      <main>
+        <Form @submit="addNewBirthday"/>
+      </main>
+
+      <footer class="mt-10 mb-4">
+        <Birth v-for="(birthday, index) in birthdays" :key="index">
+          <template #default>
+            <div class="font-medium shadow-2xl shadow-indigo-100 px-10 py-4 text-md capitalize flex flex-col items-start gap-y-4">
+              <p class="text-indigo-500">{{birthday.fullName}}</p>
+              <p class="flex flex-col">
+            <span class="text-indigo-200">
+              birthday : {{
                 `
                   ${aboutBirthday(birthday.dateOfBirth).day} ${aboutBirthday(birthday.dateOfBirth).date}
                   ${aboutBirthday(birthday.dateOfBirth).month} ${aboutBirthday(birthday.dateOfBirth).year}
                 `
               }}
             </span>
-              <span>
-              birth: {{
-                  `
+                <span class="text-pink-400">
+              birth : {{
+                    `
                   ${format(birthday.dateOfBirth).day} ${format(birthday.dateOfBirth).date}
                   ${format(birthday.dateOfBirth).month} ${format(birthday.dateOfBirth).year}
                 `
-                }}
+                  }}
             </span>
-            </p>
-            <p>less than {{getRemaining(aboutBirthday(birthday.dateOfBirth))}} days</p>
-            <p>added
-              <span>{{`${getTime().date}${getTime().month}${getTime().year}`}}</span>
-              <span>{{`${getHours().hour}:${getHours().minute}`}}</span></p>
-            <p @click="deleteBirthday">x</p>
-          </div>
-        </template>
-      </Birth>
-    </footer>
+              </p>
+              <p class="text-xl text-cyan-500">less than {{getRemaining(aboutBirthday(birthday.dateOfBirth))}} days</p>
+              <p class="flex gap-x-1">added
+                <span>{{`${getTime().date} ${getTime().month} ${getTime().year}`}}</span>
+                <span>{{`${getHours().hour}:${getHours().minute}`}}</span></p>
+              <p @click="deleteBirthday" class="cursor-pointer text-white font-bold text-sm rounded-full bg-indigo-400 w-5 h-5 flex flex-col items-center px-2">x</p>
+            </div>
+          </template>
+        </Birth>
+      </footer>
+    </div>
   </div>
 </template>
 

@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a851e385-0b59-4d74-8a16-9da9ed3e0d1b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +35,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="20hG0hN7EWzsCh7pt64VeGRcoR3" />
   <component name="ProjectLevelVcsManager">
@@ -150,6 +149,8 @@
       <workItem from="1636794054517" duration="9422000" />
       <workItem from="1637060757764" duration="2889000" />
       <workItem from="1637070117873" duration="1048000" />
+      <workItem from="1642097465188" duration="124000" />
+      <workItem from="1642149828621" duration="2694000" />
     </task>
     <servers />
   </component>
